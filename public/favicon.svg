@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="cloud" x1="12" y1="13" x2="51" y2="52" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#67e8f9" />
+      <stop offset="1" stop-color="#38bdf8" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="#0b1220" />
+  <path
+    d="M18 43h28a9 9 0 0 0 1-18 15 15 0 0 0-28-2 10 10 0 0 0-1 20Z"
+    fill="url(#cloud)"
+  />
+  <text
+    x="32"
+    y="37"
+    fill="#0b1220"
+    font-family="Arial, sans-serif"
+    font-size="13"
+    font-weight="700"
+    letter-spacing="-.7"
+    text-anchor="middle"
+  >AI</text>
+  <path d="m49 10 1.5 4.5L55 16l-4.5 1.5L49 22l-1.5-4.5L43 16l4.5-1.5L49 10Z" fill="#a5f3fc" />
+</svg>
