@@ -11,7 +11,7 @@
 - Original multiple-choice practice questions with explanations for every option
 - Weak-topic practice recommendations based on local results
 - Study coach with demo responses when no AI key is configured
-- Optional OpenAI-compatible API integration through a backend endpoint; API key stays server-side
+- Optional Gemini API integration through a backend endpoint; API key stays server-side
 - Local browser persistence via `localStorage`
 - Responsive dark interface
 
@@ -25,22 +25,33 @@ cp .env.example .env
 npm run dev
 ```
 
-Vite runs on `http://localhost:5173` and the Express API runs on `http://localhost:3001`. The quiz works without an AI API key; the coach switches to a small demo response set. To enable model-generated coaching, add your provider credentials to `.env`:
+Vite runs on `http://localhost:5173` and the Express API runs on `http://localhost:3001`. The quiz works without an AI API key; the coach switches to a small demo response set. To enable model-generated coaching, set `GEMINI_API_KEY` in `.env`:
 
 ```env
-AI_API_KEY=your_secret_key
-AI_BASE_URL=https://api.openai.com/v1
-AI_MODEL=gpt-4o-mini
+GEMINI_API_KEY=your_gemini_api_key
 PORT=3001
 ```
 
-Use an API provider and model available to you. Never commit `.env`, put secret keys in React code, or expose them in Vite variables. If deploying the frontend and backend separately, configure a server-side API endpoint and update the frontend API URL/proxy accordingly.
+Never commit `.env`, put secret keys in React code, or expose them in Vite variables. The server currently uses the Gemini model configured in `server/index.js`.
 
 ## Build check
 
 ```bash
 npm run build
 ```
+
+## Deploy to Render and Vercel
+
+Deploy the API to Render first, then deploy the frontend to Vercel. Both providers should use the repository root as the service/project root.
+
+1. Push this project to a Git repository.
+2. In Render, create a Blueprint from that repository. Render will read `render.yaml` and create the `cloudready-ai-api` web service. The health check is available at `/api/health`.
+3. Optionally add `GEMINI_API_KEY` to the Render service environment to enable Gemini coach replies. Without it, the API uses its demo replies. Keep the key on Render; do not add it to Vercel or frontend variables.
+4. In Vercel, import the same repository and deploy with the Vite settings in `vercel.json` (`npm run build`, output directory `dist`). The rewrite forwards `/api/*` requests to Render.
+5. If Render assigns a different public service URL, update the destination in `vercel.json` to `https://YOUR-RENDER-SERVICE.onrender.com/api/:path*`, commit the change, and redeploy Vercel.
+6. Open the Vercel site and test the dashboard, a quiz, and the coach. You can also visit `https://YOUR-RENDER-SERVICE.onrender.com/api/health`; it should return JSON with `ok: true`.
+
+The Render free service may take a little time to wake after inactivity. Quiz practice works independently of the coach API, and progress is stored in each learner's browser.
 
 ## Project structure
 

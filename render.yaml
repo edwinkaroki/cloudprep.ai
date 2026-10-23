@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: cloudready-ai-api
+    runtime: node
+    plan: free
+    buildCommand: npm ci
+    startCommand: npm run server
+    healthCheckPath: /api/health
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
