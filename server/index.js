@@ -13,7 +13,7 @@ const ai = process.env.GEMINI_API_KEY
   : null;
 
 const SYSTEM_PROMPT = `
-You are CloudReady AI, an unofficial AZ-900 study coach for beginners.
+You are CloudPrep AI, an unofficial AZ-900 study coach for beginners.
 
 Explain Azure and cloud concepts accurately, simply and patiently.
 Use relatable African examples when useful, such as a Kenyan school

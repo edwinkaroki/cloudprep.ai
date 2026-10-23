@@ -1,6 +1,6 @@
-# CloudReady AI ☁️
+# CloudPrep AI ☁️
 
-**An unofficial AZ-900 study coach** built for the #1MillionDevs vibe-coding hackathon. CloudReady AI uses original practice questions, instant explanations, topic-level progress, and a beginner-friendly coach to help learners understand cloud concepts instead of memorising terms.
+**An unofficial AZ-900 study coach** built for the #1MillionDevs vibe-coding hackathon. CloudPrep AI uses original practice questions, instant explanations, topic-level progress, and a beginner-friendly coach to help learners understand cloud concepts instead of memorising terms.
 
 > This is an independent learning project and is not affiliated with, endorsed by, or an official product of Microsoft. Questions are original practice questions, not real exam questions. Verify current exam scope using the public Microsoft Learn AZ-900 skills outline.
 

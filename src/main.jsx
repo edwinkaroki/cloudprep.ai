@@ -30,7 +30,7 @@ function App() {
     {
       role: "assistant",
       content:
-        "Hey! I’m your CloudReady coach. Ask me about an Azure concept, or tell me which question confused you. I’ll explain it in plain language.",
+        "Hey! I’m your CloudPrep coach. Ask me about an Azure concept, or tell me which question confused you. I’ll explain it in plain language.",
     },
   ]);
   const [coachInput, setCoachInput] = useState("");
@@ -181,11 +181,11 @@ function App() {
         <button
           className="brand"
           onClick={() => setPage("dashboard")}
-          aria-label="CloudReady home"
+          aria-label="CloudPrep home"
         >
           <span className="brand-mark">☁</span>
           <span>
-            cloudready<span className="brand-ai">.ai</span>
+            cloudprep<span className="brand-ai">.ai</span>
             <small>AZ-900 STUDY COACH</small>
           </span>
         </button>
@@ -775,7 +775,7 @@ function App() {
                 <div className="chat-top">
                   <div className="coach-orb">✧</div>
                   <div>
-                    <strong>CloudReady coach</strong>
+                    <strong>CloudPrep coach</strong>
                     <span>
                       <i />{" "}
                       {coachMode === "ai"
