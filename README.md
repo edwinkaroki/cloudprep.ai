@@ -59,15 +59,7 @@ cloudready-ai/
 ## Question/content note
 
 The question bank is a small MVP set, written in original wording and mapped to the public AZ-900 skills areas. Expand it only after validating every answer against current Microsoft Learn documentation. The readiness view is a practice indicator, not a prediction or guarantee of passing the certification exam.
-
-## Hackathon demo script (90 seconds)
-
-1. Open the dashboard and show topic-level progress.
-2. Start a five-question quiz and answer one correctly and one incorrectly.
-3. Point out the instant explanation and why each option is right or wrong.
-4. Open the coach and ask it to explain CapEx vs OpEx using a Kenyan business example.
-5. Return to the dashboard and show how practice results identify a topic to revisit.
-
+ 
 ## Next improvements
 
 1. Validate the question bank against the current official skills outline.
